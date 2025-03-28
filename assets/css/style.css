@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Questrial&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+[data-theme="dark"] {
+  --bg-co: #213555;
+  --sec-co: #3e5879;
+  --bri-co: #d8c4b6;
+  --hcont-co: #f5efe7;
+}
+[data-theme="light"] {
+  --bg-co: #fff2f2;
+  --sec-co: #a9b5df;
+  --bri-co: #7886c7;
+  --hcont-co: #2d336b;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+img {
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+.hidden {
+  display: none !important;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto Mono";
+  justify-content: center;
+  background-color: var(--bg-co);
+}
+header {
+  height: 100vh;
+  background: transparent;
+}
+main {
+  height: 80vh;
+}
+img {
+  width: 5rem;
+  min-width: 5rem;
+  padding: 5px;
+  transition: all 0.2s ease-in-out;
+}
+nav.main-nav {
+  width: 98vw !important;
+  background: transparent;
+  display: flex;
+  position: absolute;
+  top: 2rem;
+  height: 102px;
+}
+h1.big-title {
+  font-size: 3rem;
+  font-weight: 800;
+  position: absolute;
+  left: 5rem;
+  color: var(--hcont-co);
+}
+span.red {
+  color: rgb(177, 0, 0);
+}
+
+.f-container {
+  overflow: hidden;
+  width: 15vw;
+  min-width: 15rem;
+  max-height: 5rem;
+  background-color: var(--bri-co);
+  border-radius: 999px;
+  display: flex;
+  position: absolute;
+  right: 5rem;
+  gap: 5rem;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in;
+}
+.f-container img:hover {
+  background-color: #fff;
+}
