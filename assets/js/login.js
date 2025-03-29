@@ -12,9 +12,6 @@ submit.addEventListener("click", (event) => {
   if (!loginUsername || !loginPw) {
     loginMessage.classList.remove("hidden");
     loginMessage.innerHTML = "Please enter enough infos";
-  } else if (!(6 <= loginUsername.trim().length <= 18)) {
-    loginMessage.classList.remove("hidden");
-    loginMessage.innerHTML = "Your username has to be from 6 to 18 letters";
   } else if (loginUsername.trim() == "" || loginPw.trim() == "") {
     loginMessage.classList.remove("hidden");
     loginMessage.innerHTML = "Please enter enough infos";
