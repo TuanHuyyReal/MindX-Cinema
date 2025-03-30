@@ -3,9 +3,9 @@ const successContainer = document.querySelector("div.suc-container");
 successContainer.classList.add("hidden");
 
 
-localStorage.removeItem("currentUser");
 // localStorage.setItem("currentUser", accLogined);
 submit.addEventListener("click", (event) => {
+localStorage.removeItem("currentUser");
   event.preventDefault();
   let loginMessage = document.querySelector(".login-form small.message");
   loginMessage.classList.add("hidden");
