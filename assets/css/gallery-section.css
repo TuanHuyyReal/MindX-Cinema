@@ -1,0 +1,50 @@
+main {
+  margin-top: 5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+main .section {
+  margin-top: 15%;
+  width: 98vw;
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+}
+main .section:nth-child(1) {
+  margin-top: 10rem;
+}
+main .section h2 {
+  font-size: 3.6rem;
+  color: var(--hcont-co);
+  text-align: center;
+  font-weight: 800;
+  margin-bottom: 3rem;
+}
+main .section .swiper {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+}
+main .section .swiper .swiper-wrapper {
+  display: flex;
+  /* gap: 5%; */
+  height: 30vh;
+}
+a.swiper-slide {
+  width: 30vw !important;
+  height: 50vh;
+  min-width: 20rem;
+  max-width: 30rem;
+  font-size: 2.3rem;
+  color: var(--bri-co);
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--sec-co);
+}
+
+.movie-card img {
+  border: 1px solid #000;
+  width: 30vw;
+  max-width: 20rem;
+}

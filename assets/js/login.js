@@ -1,8 +1,12 @@
 const submit = document.querySelector(".login-form button.sbm-btn");
 const successContainer = document.querySelector("div.suc-container");
 successContainer.classList.add("hidden");
+
+let accLogined = false;
+// localStorage.setItem("currentUser", accLogined);
 submit.addEventListener("click", (event) => {
   event.preventDefault();
+  localStorage.removeItem("currentUser");
   let loginMessage = document.querySelector(".login-form small.message");
   loginMessage.classList.add("hidden");
   let loginUsername = document.querySelector(
@@ -26,6 +30,8 @@ submit.addEventListener("click", (event) => {
     loginMessage.innerHTML = "Invalid username or password";
   } else {
     successContainer.classList.remove("hidden");
+    accLogined = true;
+    localStorage.setItem("currentUser", accLogined);
   }
 
   console.log([loginUsername, loginPw]);
