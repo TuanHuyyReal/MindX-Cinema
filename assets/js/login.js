@@ -2,11 +2,11 @@ const submit = document.querySelector(".login-form button.sbm-btn");
 const successContainer = document.querySelector("div.suc-container");
 successContainer.classList.add("hidden");
 
-let accLogined = false;
+
+localStorage.removeItem("currentUser");
 // localStorage.setItem("currentUser", accLogined);
 submit.addEventListener("click", (event) => {
   event.preventDefault();
-  localStorage.removeItem("currentUser");
   let loginMessage = document.querySelector(".login-form small.message");
   loginMessage.classList.add("hidden");
   let loginUsername = document.querySelector(
