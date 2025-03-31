@@ -59,18 +59,41 @@ signUpSubmit.addEventListener("click", (event) => {
   } else if (username == localStorage.getItem("username")) {
     signupMessage.classList.remove("hidden");
     signupMessage.innerHTML = "Username has been used!";
-  } else if (email == localStorage.getItem("email")) {
-    signupMessage.classList.remove("hidden");
-    signupMessage.innerHTML += "Email has been used!";
   } else if (!validateEmail(email)) {
     signupMessage.classList.remove("hidden");
     signupMessage.innerHTML += "You did not redeem an email with correct form.";
   } else {
-    localStorage.setItem("username", username);
-    localStorage.setItem("email", email);
-    localStorage.setItem("password", password);
-    alert("You have registered in successfully!");
-    location.reload();
+    if (localStorage.getItem("users")) {
+      let users = JSON.parse(localStorage.getItem("users"));
+      let existingUser = users.find((user) => user.email === email);
+      if (existingUser) {
+        alert("Email already exists. Please use a different email.");
+        return;
+      } else {
+        let newUser = {
+          username: username,
+          email: email,
+          password: password,
+        };
+        users.push(newUser);
+        localStorage.setItem("users", JSON.stringify(users));
+        signupMessage.classList.remove("hidden");
+        signupMessage.innerHTML =
+          "Registration successful! You can now log in.";
+        // location.href = "./login.html";
+      }
+    } else {
+      let newUser = {
+        username: username,
+        email: email,
+        password: password,
+      };
+      let users = [newUser];
+      localStorage.setItem("users", JSON.stringify(users));
+      signupMessage.classList.remove("hidden");
+      signupMessage.innerHTML = "Registration successful! You can now log in.";
+      // location.href = "./login.html";
+    }
   }
 
   console.log([username, email, password]);

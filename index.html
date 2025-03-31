@@ -36,14 +36,21 @@
     <header>
       <!-- place navbar here -->
       <nav class="main-nav">
-        <h1 class="big-title"><span class="red">MindX</span> Cinema</h1>
+        <a href="./index.html" class="title-container"
+          ><h1 class="big-title"><span class="red">MindX</span> Cinema</h1></a
+        >
         <div class="functional f-container">
           <a href="" class="direct">
             <img src="assets/images/search-icon.svg" alt="" />
           </a>
-          <a href="register-section.html" class="direct">
+          <a
+            href="register-section.html"
+            class="direct"
+            onclick="handleSignOut()"
+          >
             <img src="assets/images/login-icon.svg" alt="" />
           </a>
+          <div id="avatar-action-container"></div>
         </div>
       </nav>
       <div class="hero-wrapper">
@@ -60,7 +67,7 @@
                   class="icon"
                   id="watch-now-btn"
                 />Watch now! </a
-              ><a href="#!" class="btn action-btn">
+              ><a href="./info.html" class="btn action-btn">
                 <img
                   src="assets/images/info.svg"
                   id="view-info-btn"

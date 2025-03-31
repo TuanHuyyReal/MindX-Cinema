@@ -72,3 +72,14 @@
   background-color: var(--hcont-co);
   color: var(--sec-co);
 }
+.avatar-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(3rem - 1vw);
+}
+.avatar-action span {
+  font-size: 2rem;
+  background-color: var(--bri-co);
+  color: var(--bg-co);
+}
