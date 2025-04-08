@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/switch-theme.css" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/info.css" />
   </head>
 
   <body class="container-fluid">
@@ -52,6 +52,40 @@
           <div id="avatar-action-container"></div>
         </div>
       </nav>
+      // hero wrapper
+      <div class="hero-wrapper">
+        <img src="" alt="#!" id="hero-image" />
+        <div>
+          <div class="hero-section-info">
+            <div id="hero-title" class="hero-section-info-title"></div>
+            <div id="hero-description" class="hero-section-info-detail"></div>
+
+            // progress => rating
+            <div class="rating-wrapper">
+              <div class="outer-ring">
+                <div class="inner-ring">
+                  <div class="progress">
+                    <div class="progress-label">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="action-btn-wrapper">
+              <a href="./watch.html" class="btn action-btn">
+                <img
+                  src="assets/images/watch-now-icon.svg"
+                  alt=""
+                  class="icon"
+                  id="watch-now-btn"
+                />Watch now!
+              </a>
+            </div>
+          </div>
+        </div>
+        <img src="" alt="#!" id="hero-preview-image" />
+      </div>
     </header>
     <main></main>
     <footer>
@@ -142,9 +176,9 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
+    <script src="assets/js/config.js" type="module"></script>
+    <script type="module" src="assets/js/info.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="assets/js/switch-theme.js"></script>
-    <script src="assets/js/config.js"></script>
-    <script src="assets/js/home.js"></script>
   </body>
 </html>

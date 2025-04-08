@@ -41,6 +41,7 @@ a.swiper-slide {
   text-align: center;
   text-decoration: none;
   background-color: var(--sec-co);
+  font-weight: 700;
 }
 
 .movie-card img {

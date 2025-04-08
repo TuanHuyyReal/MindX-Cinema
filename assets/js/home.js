@@ -1,5 +1,5 @@
-// import { TMDB_API_KEY } from "./config.js";
-const TMDB_API_KEY = "9b7c3ede447b14c5e0e9d33a137ddac9";
+import { TMDB_API_KEY } from "./config.js";
+
 (async () => {
   const HomeAPIRoutes = {
     "Trending Movies": { url: "/trending/movie/week" },
@@ -77,7 +77,12 @@ const TMDB_API_KEY = "9b7c3ede447b14c5e0e9d33a137ddac9";
   });
 
   // document.querySelector(".backdrop").classList.add("backdrop-hidden");
-
+  document.querySelector("div.section").addEventListener("click", () => {
+    localStorage.setItem(
+      "movie-id",
+      data[key].map((item) => item.id)
+    );
+  });
   Object.keys(data).map((key, index) => {
     new Swiper(`.swiper-${index}`, {
       spaceBetween: 30,

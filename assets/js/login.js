@@ -5,25 +5,18 @@ const submit = document.querySelector(".login-form button.sbm-btn");
 const successContainer = document.querySelector("div.suc-container");
 successContainer.classList.add("hidden");
 
-<<<<<<< HEAD
+function success() {
+  successContainer.classList.remove("hidden");
+  localStorage.setItem(
+    "currentUser",
+    JSON.stringify({
+      username: loginUsername,
+      email: loginEmail,
+      password: loginPw,
+    })
+  );
+}
 submit.addEventListener("click", (event) => {
-  function success() {
-    successContainer.classList.remove("hidden");
-    localStorage.setItem(
-      "currentUser",
-      JSON.stringify({
-        username: loginUsername,
-        email: loginEmail,
-        password: loginPw,
-      })
-    );
-  }
-=======
-
-// localStorage.setItem("currentUser", accLogined);
-submit.addEventListener("click", (event) => {
-localStorage.removeItem("currentUser");
->>>>>>> 0750056612c27aaa49f76633fc240056ce5ffc29
   event.preventDefault();
   let loginMessage = document.querySelector(".login-form small.message");
   loginMessage.classList.add("hidden");
@@ -60,5 +53,5 @@ localStorage.removeItem("currentUser");
     success();
   }
 
-  console.log([loginUsername, loginPw]);
+  // console.log([loginUsername, loginPw]);
 });
