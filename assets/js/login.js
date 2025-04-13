@@ -5,17 +5,6 @@ const submit = document.querySelector(".login-form button.sbm-btn");
 const successContainer = document.querySelector("div.suc-container");
 successContainer.classList.add("hidden");
 
-function success() {
-  successContainer.classList.remove("hidden");
-  localStorage.setItem(
-    "currentUser",
-    JSON.stringify({
-      username: loginUsername,
-      email: loginEmail,
-      password: loginPw,
-    })
-  );
-}
 submit.addEventListener("click", (event) => {
   event.preventDefault();
   let loginMessage = document.querySelector(".login-form small.message");
@@ -26,6 +15,32 @@ submit.addEventListener("click", (event) => {
   let loginPw = document.querySelector(".login-form input#password").value;
   let loginEmail = document.querySelector(".login-form input#email").value;
   let users = localStorage.getItem("users");
+
+  function success() {
+    let avatar = JSON.parse(localStorage.getItem("users")).map((user) => {
+      if (user.email == loginEmail) {
+        if (!user.avatar) {
+          userAvatar = user.avatar;
+        } else {
+          userAvatar = `https://api.dicebear.com/6.x/initials/svg?seed=${encodeURIComponent(
+            user.username
+          )}`;
+        }
+        return userAvatar;
+      }
+    });
+    successContainer.classList.remove("hidden");
+    localStorage.setItem(
+      "currentUser",
+      JSON.stringify({
+        username: loginUsername,
+        email: loginEmail,
+        password: loginPw,
+        avatar: avatar[0],
+      })
+    );
+  }
+
   for (let i = 0; i < users.length; i++) {
     if (users[i].email != loginEmail) {
       continue;
